@@ -1,64 +1,29 @@
+package holamundo1;
 
-package boleta;
-
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
-public class Boleta {
+public class Holamundo1 {
 
     
     public static void main(String[] args) {
-        System.out.println("----------- BOLETA --------");
-        Scanner tem = new Scanner(System.in);
-        String nomb;
-        
-        System.out.println("Ingrese su nombre: ");
-        nomb = tem.nextLine();
-        
-        // PRODUCTO COMPRADO
-        Scanner Prod=new Scanner(System.in);
-        String Nombre;
-        double Precio;
-        int Cantidad = 0;
-        double Subtotal;
-        double Total;
-        double Impuesto;
-        double IGV=0.18;
-        double Descuelto=0.1;
-        System.out.println("Que producto sea comprar?");
-        Nombre=Prod.next();
-        System.out.println("Cula es el precio unitario del producto; "+Nombre+"?");
-        Precio=Prod.nextDouble();
-        Subtotal=Precio*Cantidad;
-        Impuesto=Subtotal*IGV;
-        Total=Subtotal+Impuesto;
-        if (Total>5000){
-            double Total12 = (Total)-Total*Descuelto;
-            System.out.println("""
-                               -----------FACTURA-----------
-                               Producto;""" +Nombre
-                    + "\nPrecio; "+Precio
-                    +"\nCantidad comprada; "+Cantidad
-                    + "\nSubtotal; "+Subtotal
-                    + "\nImpuesto; "+Impuesto
-                    + "\nTotal; "+Total
-                    + "\nDescuento; "+(Total*Descuelto)
-                    +"\nTotal a pagar; "+Total12);
-            
-        }else{
-            System.out.println("""
-                               -----------FACTURA-----------
-                               Producto;""" +Nombre
-                    + "\nPrecio; "+Precio
-                    +"\nCantidad comprada; "+Cantidad
-                    + "\nSubtotal; "+Subtotal
-                    + "\nImpuesto; "+Impuesto
-                    + "\nTotal; "+Total);
-        
-        }
-        
- 
-        
+        // 4 Operaciones que muestren al mismo tiempo los resultados
+        String a = JOptionPane.showInputDialog(null,"Ingrese el primer numero:");
+        String b = JOptionPane.showInputDialog(null, "Ingrese el segundo numero:");
+        double n1 = Double.parseDouble(a);
+        double n2 = Double.parseDouble(b);
+        double  suma = n1 + n2;
+        double resta = n1 - n2;
+        double mult = n1 * n2;
+        double div = n1 / n2;
+        JOptionPane.showMessageDialog(null, "Los resultados fueron: \n "
+                + "La suma fue: "+ suma +"\n"
+                + "La resta fue: "+ resta +"\n"
+                + "La miltiplicacion fue: " +mult+ "\n"
+                + "La division fue: " +div);
+                
+   
+  
     }
     
 }
